@@ -1,0 +1,12 @@
+---
+- name: Set up the server and deploy the components
+  hosts: all
+  become: yes
+  tasks:
+    - name: Install Docker and Docker Compose
+      import_role:
+        name: docker
+
+    - name: Deploy components using Docker Compose
+      import_role:
+        name: deploy
